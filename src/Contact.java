@@ -1,14 +1,11 @@
-import javax.naming.Name;
-import java.util.ArrayList;
-
-public class Contacts {
+public class Contact {
 
     String lname;
     String fname;
     long phoneNumber;
     String email;
 
-    public Contacts(String lname, String fname, long phoneNumber, String email) {
+    public Contact(String lname, String fname, long phoneNumber, String email) {
         this.lname = lname;
         this.fname = fname;
         this.phoneNumber = phoneNumber;
@@ -32,7 +29,7 @@ public class Contacts {
     }
 
 
-    public static Contacts createList(String lname, String fname, long phoneNumber, String email) {
-        return new Contacts(lname, fname, phoneNumber, email);
+    public static Contact createList(String lname, String fname, long phoneNumber, String email) {
+        return new Contact(lname, fname, phoneNumber, email);
     }
 }

@@ -1,7 +1,6 @@
-import javax.swing.*;
 import java.util.Scanner;
 
-public class PhoneBook extends Process {
+public class Main extends Process {
 
     private static Scanner scanner = new Scanner(System.in);
     private static Process process = new Process();
@@ -47,7 +46,7 @@ public class PhoneBook extends Process {
     private static void removeContact() {
         System.out.println("| Enter the Name you want to remove: ");
         String lname = scanner.nextLine();
-        Contacts otherContact = process.searchContact(lname);
+        Contact otherContact = process.searchContact(lname);
         if (otherContact == null) {
 
             System.out.println("| Contact does not exist");
@@ -62,7 +61,7 @@ public class PhoneBook extends Process {
     private static void searchContact() {
         System.out.println("| Enter the last Name you want to search");
         String lname = scanner.nextLine();
-        Contacts extContact = process.searchContact(lname);
+        Contact extContact = process.searchContact(lname);
         if (extContact == null) {
             System.out.println("| Contact does not exist.");
             return;

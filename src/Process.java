@@ -1,14 +1,12 @@
-import com.sun.deploy.cache.BaseLocalApplicationProperties;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Process {
 
-    private ArrayList<Contacts> contactList;
+    private ArrayList<Contact> contactList;
 
     public Process() {
-        this.contactList = new ArrayList<Contacts>();
+        this.contactList = new ArrayList<Contact>();
     }
 
 
@@ -24,7 +22,7 @@ public class Process {
             String email = scanner.nextLine();
             System.out.println("| Enter Phone Number: ");
             long phone = scanner.nextLong();
-            Contacts newContact = Contacts.createList(lname, fname, phone, email);
+            Contact newContact = Contact.createList(lname, fname, phone, email);
             if (addNewContact(newContact)) {
                 System.out.println("| \n|     New Contact Added:\n|    Full Name: " + lname + ", " + fname + "\n| Phone Number: "
                         + phone + "\n| Email Address " + email);
@@ -35,12 +33,12 @@ public class Process {
     }
 
 
-    private boolean addNewContact(Contacts contact) {
+    private boolean addNewContact(Contact contact) {
         contactList.add(contact);
         return true;
     }
 
-    public boolean removeContact(Contacts contact) {
+    public boolean removeContact(Contact contact) {
         int find = findContact(contact);
         if (find < 0) {
             System.out.println("|   " + contact.getLName() + " does not exist.");
@@ -52,14 +50,14 @@ public class Process {
     }
 
 
-    private int findContact(Contacts contact) {
+    private int findContact(Contact contact) {
         return this.contactList.indexOf(contact);
     }
 
 
     private int findContact(String contactName) {
         for (int i = 0; i < contactList.size(); i++) {
-            Contacts contacts = this.contactList.get(i);
+            Contact contacts = this.contactList.get(i);
             if (contacts.getLName().equals(contactName)) {
                 return i;
             }
@@ -68,7 +66,7 @@ public class Process {
     }
 
 
-    public String queryContact(Contacts contact) {
+    public String queryContact(Contact contact) {
         if (findContact(contact) >= 0) {
             return contact.getLName();
         }
@@ -76,7 +74,7 @@ public class Process {
     }
 
 
-    public Contacts searchContact(String lname) {
+    public Contact searchContact(String lname) {
         int position = findContact(lname);
         if (position >= 0) {
             return this.contactList.get(position);
