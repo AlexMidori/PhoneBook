@@ -79,11 +79,11 @@ public class PhoneBook extends Process {
     private static void menu() {
         System.out.println("| _________________________________|");
         System.out.println("|  Press the number of your choice |");
-        System.out.println("|   0: Exit.                |\n" +
-                           "|   1: Display Contact      |\n" +
-                           "|   2: Add a New Contact    |\n" +
-                           "|   3: Remove Contact       |\n" +
-                           "|   4: Search Contact       |\n");
+        System.out.println("|    0: Exit.                      |\n" +
+                           "|    1: Display Contact            |\n" +
+                           "|    2: Add a New Contact          |\n" +
+                           "|    3: Remove Contact             |\n" +
+                           "|    4: Search Contact             |\n");
     }
 }
 

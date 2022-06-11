@@ -35,23 +35,4 @@ public class Contacts {
     public static Contacts createList(String lname, String fname, long phoneNumber, String email) {
         return new Contacts(lname, fname, phoneNumber, email);
     }
-
-
-//    ArrayList<String> contactList = new ArrayList<String>();
-//
-//    public ArrayList<String> getContactList() {
-//        return contactList;
-//    }
-//
-//    public void storeContacts(String names) {
-//        contactList.add(names);
-//    }
-
-
-//    public void printContactList() {
-//        System.out.println("You have " + contactList.size() + " Contacts in your list");
-//        for (int i = 0; i < contactList.size(); i++) {
-//            System.out.println(i + " - " + contactList.get(i));
-//        }
-//    }
 }
