@@ -1,34 +1,37 @@
+package service;
+
+import model.Contact;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Process {
+public class ContactService {
 
     private ArrayList<Contact> contactList;
 
-    public Process() {
+    public ContactService() {
         this.contactList = new ArrayList<Contact>();
     }
-
 
     public void addNewContact() {
         Scanner scanner = new Scanner(System.in);
         int i = 5;
         if (i > this.contactList.size()) {
             System.out.println("| Enter Last Name: ");
-            String lname = scanner.nextLine();
+            String lastName = scanner.nextLine();
             System.out.println("| Enter First Name: ");
-            String fname = scanner.nextLine();
+            String firstName = scanner.nextLine();
             System.out.println("| Enter Email Address: ");
             String email = scanner.nextLine();
             System.out.println("| Enter Phone Number: ");
-            long phone = scanner.nextLong();
-            Contact newContact = Contact.createList(lname, fname, phone, email);
+            long phoneNumber = scanner.nextLong();
+            Contact newContact = Contact.createList(lastName, firstName, phoneNumber, email);
             if (addNewContact(newContact)) {
-                System.out.println("| \n|     New Contact Added:\n|    Full Name: " + lname + ", " + fname + "\n| Phone Number: "
-                        + phone + "\n| Email Address " + email);
+                System.out.println("| \n|     New Contact.Contact Added:\n|    Full Name: " + lastName + ", " + firstName + "\n| Phone Number: "
+                        + phoneNumber + "\n| Email Address " + email);
             }
         } else {
-            System.out.println("         \n|       Maximum Contact!");
+            System.out.println("         \n|       Maximum Contact.Contact!");
         }
     }
 
@@ -66,14 +69,6 @@ public class Process {
     }
 
 
-    public String queryContact(Contact contact) {
-        if (findContact(contact) >= 0) {
-            return contact.getLName();
-        }
-        return null;
-    }
-
-
     public Contact searchContact(String lname) {
         int position = findContact(lname);
         if (position >= 0) {
@@ -85,7 +80,7 @@ public class Process {
 
 
     public void printContacts() {
-        System.out.println("\n| Contact list");
+        System.out.println("\n| Contact.Contact list");
         if (this.contactList.size() > 0) {
             for (int i = 0; i < this.contactList.size(); i++) {
                 System.out.println("|  " + (i + 1) + ". " + "\n| Name       : " +
